@@ -9,24 +9,24 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
   </head>
-  <body>
+  <body id="home" data-spy="scroll" data-target=".navbar" data-offset="100">
 
   	<!-- navbar -->
 	<nav class="navbar fixed-top navbar-expand-sm navbar-dark bg-primary">
 		<div class="container">
 		   <div class="collapse navbar-collapse" id="navbarNav">
 		    <ul class="navbar-nav">
-		      <li class="nav-item active">
-		        <a class="nav-link" href="home">Home <span class="sr-only">(current)</span></a>
+		      <li class="nav-item">
+		        <a class="nav-link" href="#home">Home <span class="sr-only">(current)</span></a>
 		      </li>
 		      <li class="nav-item">
-		        <a class="nav-link" href="about">About</a>
+		        <a class="nav-link" href="#about">About</a>
 		      </li>
 		      <li class="nav-item">
-		        <a class="nav-link" href="speakers">Speakers</a>
+		        <a class="nav-link" href="#speakers">Speakers</a>
 		      </li>
 		      <li class="nav-item">
-		        <a class="nav-link" href="schedule">Schedule</a>
+		        <a class="nav-link" href="#schedule">Schedule</a>
 		      </li>
 		    </ul>
 		   </div>
@@ -41,14 +41,15 @@
 		    <h1 class="display-2 text-light">Full Stack Conf</h1>
 		    <p class="lead text-light">A One-day Conference About All Things Javascript.</p>
 		    <div class="btn-group mt-3" role="group" aria-label="Basic example">
-			  <button type="button" class="btn btn-primary btn-lg">Register Now</button>
+			  <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#register">Register Now</button>
 			  <a href="#speakers" class="btn btn-light btn-lg">See Speakers</a>
 			</div>
 		  </div>
 		</div>
 
   	<!-- /jumbotron -->
-    <div class="container pt-4"><!-- container -->
+    <div id="about" class="container pt-4"><!-- container -->
+    	<!-- about -->
     	<div class="row">
     		<div class="col-lg-4">
     			<h3 class="mb-2">About Full Stack Conf</h3>
@@ -143,15 +144,33 @@
 
 
     	<!-- schedule -->
-    	<h1 class="display-4 text-center my-3 text-secondary">Schedule</h1>
-    	[conference schedule goes here]
+    	<h1 id="schedule" class="display-4 text-center my-3 text-secondary">Schedule</h1>
+    		<ul class="list-group">  <!-- schedule -->
+			  <li class="list-group-item">
+			  	<h4 class="list-group-item-heading">keynote: Internet of Things <span class="badge badge-info badge-pill float-sm-right">9:00am</span></h4>
+			    NodeStradamus
+				</li>
+			  <li class="list-group-item">
+			  	<h4 class="list-group-item-heading">Angular basis <span class="badge badge-info badge-pill float-sm-right">10:00am</span></h4>
+			    Angie McAngular
+			  </li>
+			  <li class="list-group-item">
+			  <h4 class="list-group-item-heading">Hey, Mongo <span class="badge badge-info badge-pill float-sm-right">11:00am</span></h4>
+			    Jay Query
+			  </li>
+			  <li class="list-group-item list-group-item-success">
+			  <h4 class="list-group-item-heading">Lunch <span class="badge badge-info badge-pill float-sm-right">12:00pm</span></h4>
+			    Free Pizza for everyone!
+			  </li>
+			</ul>    	<!-- s/chedule -->
+
 
     	<!-- Callout button -->
     	<br>
     	<div class="row my-3 text-center">
     		<div class="col-sm-4"></div>
     		<div class="col-sm-4">
-    			<button type="button" class="btn btn-outline-info btn-lg">Don't Miss Out, Register Now!</button>
+    			<button type="button" class="btn btn-outline-info btn-lg" data-toggle="modal" data-target="#register">Don't Miss Out, Register Now!</button>
     		</div>
     		<div class="col-sm-4"></div>
     		
@@ -212,9 +231,49 @@
 
     </div>    <!-- /container -->
 
+<!-- ============================================
+				form modal
+================================================= -->
 
+	<!-- Modal -->
+	<div id="register" class="modal fade">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <h5 class="modal-title">Register for Full Stack Conf</h5>
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	          <span aria-hidden="true">&times;</span>
+	        </button>
+	      </div>
+		      <div class="modal-body">
+		        <!-- registration -->
+					<form action="">
+						<h5 class="mb-2">Basic info</h5>
+						<div class="form-group">
+							<label for="name">Name:</label>
+							<input type="text" class="form-control" id="name">
+						</div>
+						<div class="form-group">
+							<label for="email">Email:</label>
+							<input type="email" class="form-control" id="email">
+						</div>
+						<div class="form-group">
+							<label for="role">Job Role:</label>
+							<select class="form-control" name="user_role" id="role">
+								<option value="full stack js developer">Full stack Javascript Developer</option>
+								<option value="front end developer">Front End Developer</option>
+								<option value="back end developer">Back End Developer</option>
+								<option value="designer">Designer</option>
+								<option value="student">Student</option>
+							</select>
+						</div>
 
-
+					</form>
+		        <!-- /registration -->
+		      </div>
+	      </div>
+	  </div>
+	</div>
 
 
 
